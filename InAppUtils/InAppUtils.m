@@ -117,7 +117,6 @@ restoreCompletedTransactionsFailedWithError:(NSError *)error
         for(SKPaymentTransaction *transaction in queue.transactions){
             if(transaction.transactionState == SKPaymentTransactionStateRestored) {
               NSDictionary *purchase = @{
-                @"originalTransactionIdentifier": transaction.originalTransaction.transactionIdentifier,
                 @"transactionIdentifier": transaction.transactionIdentifier,
                 @"productIdentifier": transaction.payment.productIdentifier
               };
